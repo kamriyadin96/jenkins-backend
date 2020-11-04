@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
     backend:
-        image: corrykalam/jenkins-backend-project:main
+        image: kamriyadin/jenkins-backend:main
         container_name: backend-express
         ports:
             - 4321:4321
@@ -14,11 +14,11 @@ services:
             - PORT=4321
             - REDIS_HOST=redis
             - REDIS_PORT=6379
-            - REDIS_PASSWORD=redispass123
+            - REDIS_PASSWORD=redis123
             - DB_HOST=postgres
             - DB_USER=postgres
-            - DB_PASSWORD=anjayman123
-            - DB_NAME=newOnlineShop
+            - DB_PASSWORD=tambora123
+            - DB_NAME=tokokopi
             - JWT_KEYS=testpass123
         deploy:
             resources:
@@ -33,8 +33,8 @@ services:
         container_name: postgres
         environment:
             - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=anjayman123
-            - POSTGRES_DB=newOnlineShop
+            - POSTGRES_PASSWORD=tambora123
+            - POSTGRES_DB=tokokopi
         ports:
             - 5432:5432
         networks: 
@@ -43,11 +43,11 @@ services:
             - ./postgres-data:/var/lib/postgresql/data
     redis:
         image: redis
-        command: redis-server --requirepass redispass123
+        command: redis-server --requirepass redis123
         container_name: redis
         environment: 
             - REDIS_PORT=6379
-            - REDIS_PASSWORD=redispass123
+            - REDIS_PASSWORD=redis123
         ports: 
             - 6379:6379
         networks:
