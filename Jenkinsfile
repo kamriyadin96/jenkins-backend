@@ -69,7 +69,7 @@ pipeline {
                     sshPublisher(
                         publishers: [
                             sshPublisherDesc(
-                                configName: 'dev-server',
+                                configName: 'server-development',
                                 verbose: false,
                                 transfers: [
                                     sshTransfer(
